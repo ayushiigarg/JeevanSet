@@ -1,0 +1,51 @@
+{
+  "name": "jeevansetu",
+  "version": "1.0.0",
+  "description": "JeevanSetu is a comprehensive donation platform dedicated to saving and enhancing lives through various forms of donations. Our mission is to create a seamless and user-friendly experience for donors and recipients, facilitating the process of giving and receiving life-saving resources.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushiigarg/JeevanSetu.git"
+  },
+  "keywords": [
+    "JeevanSetu",
+    "Donation",
+    "Blood",
+    "Organ",
+    "Plasma",
+    "BoneMarrow",
+    "Tissue",
+    "Health",
+    "Community",
+    "Support",
+    "Medical",
+    "Life",
+    "Giving",
+    "Save",
+    "Help",
+    "Care",
+    "Donor",
+    "Match",
+    "Registry",
+    "Transplant"
+  ],
+  "author": "Ayushi Garg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayushiigarg/JeevanSetu/issues"
+  },
+  "homepage": "https://github.com/ayushiigarg/JeevanSetu#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
