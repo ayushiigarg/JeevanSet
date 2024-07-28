@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         required: [true, "Enter Role"],
-        enum: ["admin", "organisation", "Donor", "Hospital"]
+        enum: ["admin", "organisation", "donor", "hospital"]
     },
     name: {
         type: String,
@@ -68,6 +68,10 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: [true, "Enter country"]
         }
+    },
+    isActive: {
+        type: Boolean,
+        default: true // Default value set to true
     }
 }, {timestamps: true});
 

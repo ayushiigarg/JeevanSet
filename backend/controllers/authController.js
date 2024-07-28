@@ -98,5 +98,31 @@ const currentUserController = async(req,res)=>{
     });
     }
 }
+const activeUsersByRoleController = async (req, res) => {
+  try {
+    const { role } = req.body; // Get the role from the request body
+    const activeUsers = await userModel.find({ isActive: true, role: role });
+      if (activeUsers.length === 0) {
+      return res.status(200).send({
+        success: true,
+        message: 'No users found for the specified role'
+      });
+    }
 
-module.exports = { registerController, loginController,currentUserController };
+
+    return res.status(200).send({
+      success: true,
+      message: 'Active users fetched successfully',
+      users: activeUsers
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: 'Unable to get active users by role',
+      error
+    });
+  }
+};
+
+module.exports = { registerController, loginController,currentUserController,activeUsersByRoleController };
