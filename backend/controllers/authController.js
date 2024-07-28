@@ -62,7 +62,7 @@ const loginController = async (req, res) => {
     // Create a payload with user ID and email
     const payload = { userId: user._id, email: user.email };
     // Sign the access token with a 1-day expiration
-    const accessToken = jwt.sign(payload, 'your-access-token-secret', { expiresIn: '1d' });
+    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     // Send the access token in the response
     res.status(200).send({
@@ -80,4 +80,23 @@ const loginController = async (req, res) => {
   }
 }
 
-module.exports = { registerController, loginController };
+const currentUserController = async(req,res)=>{
+    try {
+      const user = await userModel.findOne({ _id: req.body.userId });
+      return res.status(200).send({
+        success: true,
+        message: 'User fetched successfully',
+        user
+      })
+      
+    } catch (error) {
+      console.log(error)
+      res.status(500).send({
+      success: false,
+      message: 'Unable to get current user',
+      error
+    });
+    }
+}
+
+module.exports = { registerController, loginController,currentUserController };
