@@ -14,7 +14,7 @@ app.use(morgan('dev')); // Log HTTP requests
 
 // Set up route handlers
 app.use("/api/v1/test", require("./routes/testRoutes"));
-
+app.use("/api/v1/auth",require("./routes/authRoutes"))
 // Define port and environment mode
 const PORT = process.env.PORT || 5000;
 const DEV_MODE = process.env.DEV_MODE;
